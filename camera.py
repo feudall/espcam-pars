@@ -109,9 +109,169 @@ class Camera():
             return res.status_code
         else:
             return res.status_code
+        
+        
+        
+    def special_effect(self, val):
+        working_range = (0, 1, 2, 3, 4, 5, 6)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 6 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+        
+    def avb(self, val):
+        working_range = (0, 1)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+        
+    def avb_gain(self, val):
+        working_range = (0, 1)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+    def wb_mode(self, val):
+        working_range = (0, 1, 2, 3, 4)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+    def aec_sensor(self, val):
+        working_range = (0, 1)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+    def aec_dsp(self, val):
+        working_range = (0, 1)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+    def ae_level(self, val):
+        working_range = (2,1,0,-1,-2)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+        
+    def exposure(self, val):
 
+        if val > 1200 or val < 0:
+            raise MyException('значение вне диапазона. Используйте значение от 4 до 63 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=quality&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+    def agc(self, val):
+        working_range = (0, 1)
+        if val not in working_range:
+            raise MyException('значение вне диапазона. Используйте значение от 0 до 1 включительно')
+        res = requests.get(f'http://{self.ip}/control?var=saturation&val={val}')
+        if res.status_code == 200:
+            time.sleep(1)
+            return res.status_code
+        else:
+            return res.status_code
+        
+        
+     def gain(self, val):
+        pass
+    
+     def bpc(self, val):
+        pass
 
+     def wpc(self, val):
+        pass
 
+    
+     def raw_gma(self, val):
+        pass    
+    
+    
+     def lens_correction(self, val):
+        pass    
+    
+    
+     def h_mirror(self, val):
+        pass    
+    
+    
+     def v_flip(self, val):
+        pass
+    
+    
+     def dcw(self, val):
+        pass    
+    
+    
+    
+     def color_bar(self, val):
+        pass
+    
+    
+     def face_detection(self, val):
+        pass
+    
+    
+     def face_recognition(self, val):
+        pass
+    
+    
+     def (self, val):
+        pass    
+    
+    
+     def (self, val):
+        pass    
 cam1 = Camera('192.168.171.193')
 
 print(cam1.quality(5))
